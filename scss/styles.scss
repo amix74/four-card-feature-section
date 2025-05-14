@@ -1,2 +1,172 @@
 @use "reset-css";
+@use "color";
+@use "fonts";
 
+body {
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.75rem;
+  width: 100%;
+  min-height: 100vh;
+  padding: 3.5rem 1.875rem;
+  background: #fafafa;
+  margin: auto;
+
+}
+
+.header {
+  max-width: 19.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h1 {
+    @include fonts.mobile-1(color.$grey-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      @include fonts.mobile-2(color.$grey-500)
+    }
+  }
+
+  p {
+    @include fonts.mobile-4(color.$grey-500);
+    text-align: center;
+  }
+;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 2rem;
+  min-height: 15.62rem;
+  padding: 2rem;
+  max-width: 19.62rem;
+  flex: 1 1;
+
+  margin: auto;
+
+  background: color.$white;
+  box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5);
+  border-top: 0.25rem solid;
+  border-radius: 0.5rem;
+
+  &__header {
+    @include fonts.text-3(color.$grey-500)
+  }
+
+  &__description {
+    @include fonts.text-5(color.$grey-400)
+  }
+
+  &--cyan {
+    border-color: color.$cyan;
+  }
+
+  &--red {
+    border-color: color.$red;
+  }
+
+  &--orange {
+    border-color: color.$orange;
+  }
+
+  &--blue {
+    border-color: color.$blue;
+  }
+
+}
+
+.card__title {
+  position: relative;
+  top: -0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.375rem;
+}
+
+.card__icon {
+  position: relative;
+  top: -0.25rem;
+}
+
+
+.middle-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 15.62rem;
+  gap: 2rem;
+
+  flex: 1 0;
+}
+
+
+@media screen and (min-width: 60rem) {
+
+  .container {
+    gap: 4.625rem;
+  }
+
+  .header {
+    max-width: 33.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h1 {
+      @include fonts.text-1(color.$grey-500);
+
+
+      span {
+        @include fonts.text-2(color.$grey-500)
+      }
+    }
+
+    p {
+      @include fonts.text-4(color.$grey-500);
+    }
+  ;
+  }
+
+  .middle-wrapper {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  main {
+    flex-direction: row;
+  }
+
+  .card {
+    max-width: 21.88rem;
+  }
+
+  .middle-wrapper {
+    flex-direction: column;
+  }
+}
