@@ -63,8 +63,11 @@ h1, h2, h3, h4, h5, h6 {
   font-display: swap;
 }
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
 }
 
 .container {
@@ -75,9 +78,7 @@ body {
   gap: 3.75rem;
   width: 100%;
   min-height: 100vh;
-  padding: 3.5rem 1.875rem;
-  background: #fafafa;
-  margin: auto;
+  padding: 1rem;
 }
 
 .header {
